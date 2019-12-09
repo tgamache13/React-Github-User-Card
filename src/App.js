@@ -3,6 +3,7 @@ import axios from 'axios';
 import GitHubCalendar from 'react-github-calendar';
 import './styles.scss';
 
+
 class App extends React.Component {
   constructor() {
     super();
@@ -43,31 +44,39 @@ class App extends React.Component {
           .catch(error => {
             console.log('error', error)
           })
+    
       
   }
   render() {
     return (
-      <div class="container">
-        <img src={this.state.user.avatar_url} />
-      
-        <h1>{this.state.user.name}</h1>
-        <h3>{this.state.user.bio}</h3>
-        <h3>{this.state.user.location}</h3>
-        <h3>{this.state.user.login}</h3>
-        
-        <a href="https://api.github.com/users/{this.state.user.login}">{this.state.user.url}</a>
-        
-        {/* <div class='calendar'>
-        
+      <div class="container" >
+        <div className="user">
+          <div className="user-photo">
+            <img src={this.state.user.avatar_url} />
+          </div>
+          <div className="user-info">
+            <h1>{this.state.user.name}</h1>
+            <h3>Bio Info: {this.state.user.bio}</h3>
+            <h3>Location: {this.state.user.location}</h3>
+            <h3>User Name: {this.state.user.login}</h3>
+            
+            <a href="https://api.github.com/users/{this.state.user.login}">{this.state.user.url}</a>
+          </div>
+        </div>
+        <div class='calendar'>
+          
            <GitHubCalendar id='calendar' theme={this.defaultTheme} username={this.state.user.login}/>
           <script>GitHubCalendar(".calendar", "tgamache13")</script>
           
-        </div> */}
+        </div>
+        <div className="foll-hl-div">
+        <h2 className="followers-headline">Tgamache13's Followers: </h2>
+        </div>
       <div className='followers'>
           {this.state.followers.map((follower, index) => (
-            <div key={index}>
-            <img  src={follower.avatar_url} />
-            <h2> {follower.login}</h2>
+            <div className="foll-info-div" key={index}>
+            <img className="foll-photos"  src={follower.avatar_url} />
+            <h2 className="foll-name"> {follower.login}</h2>
             {/* <h3>{follower.url}</h3> */}
           </div>
           ))}

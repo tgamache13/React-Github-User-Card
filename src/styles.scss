@@ -2,3 +2,43 @@
     display:flex;
     justify-content: space-between;
 }
+.foll-hl-div {
+    display: flex;
+    justify-content: center;
+    margin:  2%;
+    text-shadow: 3px 3px 6px;
+    color: purple;
+}
+.followers-headline {
+    align-content: center;
+}
+.user {
+    display: flex;
+    justify-content: space-around;
+    
+}
+.user-info {
+    padding-top: 10%;
+    border: 2px solid purple;
+    box-shadow: 0px 8px 16px;
+    margin-bottom: 5%;
+}
+.user-photo {
+    margin-bottom: 5%;
+}
+.user-photo, .foll-photos {
+    border: 2px solid purple;
+    box-shadow: 0px 8px 16px;
+}
+.foll-info-div {
+    align-content: center;
+    .foll-name {
+        margin-top: 2%;
+        text-shadow: 0px 3px 6px;
+    }
+}
+.container {
+    background-color: silver;
+    border: purple;
+
+}
